@@ -1,30 +1,28 @@
-## Step 2: Getting work done with Copilot
+## Step 2: 借助 Copilot 快速完成任务
 
-In the previous step, GitHub Copilot was able to help us onboard to the project. That alone is a huge time saver, but now let's get some work done!
+在上一步中，GitHub Copilot 已经帮助我们顺利上手项目。这本身就节省了大量时间，但现在是时候真正开始干活了！
 
-:bug: **THERE IS A BUG ON THE WEBSITE** :bug:
+:bug: **糟糕，网站上出现了一个 BUG** :bug:
 
-We’ve discovered that something’s off in the signup flow.
-Students can currently register for the same activity **more than once**! Let’s see how far Copilot can take us in uncovering the cause and shaping a clean fix.
+我们发现报名流程有点问题：学生竟然可以重复报名同一个活动！😱
+考验 Copilot 的时候到了，看它能否帮助我们找出问题来源并修复。
 
-Before we dive in, a quick primer on how Copilot works. 🧑‍🚀
+开始前，先简单了解一下 Copilot 的工作原理。🧑‍🚀
 
-### 📖 Theory: How Copilot works
+### 📖 Copilot 工作原理
 
-In short, you can think of Copilot like a very specialized coworker. To be effective with them, you need to provide them background (context) and clear direction (prompts). Additionally, different people are better at different things because of their unique experiences (models).
+简单来说，可以把 Copilot 想成一个“专家级的同事”。想让它帮你高效的完成工作，就得给它足够的背景信息（context）和清晰的指令（prompt）。而不同的模型（model）就像不同的同事，有各自的强项。
 
-- **How do we provide context?:** In our coding environment, Copilot will automatically consider nearby code and open tabs. If you are using chat, you can also explicitly refer to files.
-
-- **What model should we pick?:** For our exercise, it shouldn't matter too much. Experimenting with different models is part of the fun! That's another lesson! 🤖
-
-- **How do I make prompts?:** Being explicit and clear helps Copilot do the best job. But unlike some traditional systems, you can always clarify your direction with followup prompts.
+* **如何提供上下文?:** 在开发环境，Copilot 会自动参考你周围的代码和打开的文件；如果你用聊天功能，还可以直接引用文件。
+* **选择模型：** 本次练习中选哪个模型不是我们关注的焦点，可以自行尝试，体会不同模型的特点与效果。🤖
+* **如何写提示词（prompt）：** 指令要清楚明确，这样 Copilot 才能给出最贴切的结果；当然，你也可以随时补充说明，它能理解上下文继续帮你完善。
 
 > [!TIP]
-> There several other ways to supplement Copilot's knowledge and capabilities like [chat participants](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/github-copilot-chat-cheat-sheet?tool=vscode#chat-participants), [chat variables](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/github-copilot-chat-cheat-sheet?tool=vscode#chat-variables), [slash commands](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/github-copilot-chat-cheat-sheet?tool=vscode#slash-commands-1), and [MCP tools](https://code.visualstudio.com/docs/copilot/chat/mcp-servers).
+> 你还可以通过 [聊天参与者](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/github-copilot-chat-cheat-sheet?tool=vscode#chat-participants)、[聊天变量](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/github-copilot-chat-cheat-sheet?tool=vscode#chat-variables)、[斜杠命令](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/github-copilot-chat-cheat-sheet?tool=vscode#slash-commands-1) 和 [MCP 工具](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) 等方式进一步增强 Copilot 的能力。
 
-### :keyboard: Activity: Use Copilot to fix our registration bug :bug:
+### :keyboard: 实操环节: 使用 Copilot 修复 bug :bug:
 
-1. Let's ask Copilot to suggest where our bug might be coming from. Open the **Copilot Chat** panel in **Ask mode** and ask the following.
+1. 首先让 Copilot 定位 bug 的来源。打开 **Copilot Chat 面板**，选择 **Ask 模式**，然后输入：
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -33,26 +31,27 @@ In short, you can think of Copilot like a very specialized coworker. To be effec
    > Where could this bug be coming from?
    > ```
 
-1. Now that we know the issue is in the `src/app.py` file and the `signup_for_activity` method, let's follow Copilot's recommendation and go fix it (semi-manually). We'll start with a comment and let Copilot finish the correction.
+2. Copilot 会告诉你问题出在 `src/app.py` 文件的 `signup_for_activity` 方法中。接下来我们按它的建议手动修复。
 
-   1. In VS Code, select the file **Explorer tab** to show the project files and open the `src/app.py` file.
+   1. 打开 VS Code 找到并打开 `src/app.py` 文件。
 
-   1. Scroll near the bottom of the file and find the `signup_for_activity` method.
+   2. 滚动到文件底部附近，找到 `signup_for_activity` 方法。
 
-   1. Find the comment line that describes adding a student. Above this is where it seems logical to do our registration check.
+   3. 找到那条 “Add student” 的注释，在它上方添加注册校验逻辑。
 
-   1. Enter the below comment and press enter to go to the next line. After a moment, temporary shadow text will appear with a suggestion from Copilot! Nice! :tada:
+   4. 输入下面这行注释后按下回车，稍等片刻，你会看到 Copilot 自动出现代码建议：
 
       ```python
       # Validate student is not already signed up
       ```
 
-   1. Press `Tab` to accept Copilot's suggestion and convert the shadow text to code.
+   5. 按下 `Tab` 键接受建议并生成代码。
 
    <details>
-   <summary>Example Results</summary><br/>
+   <summary>参考示例代码</summary><br/>
 
-   Copilot is growing every day and may not always produce the same results. If you are unhappy with the suggestions, here is an example of a valid suggestion result we produced during the making of this exercise. You can use it to continue forward.
+   注意：Copilot 每天都在不断进步，因此生成的结果可能会有所不同。
+   如果你对当前的建议不太满意，可以参考我们给出的示例结果，用它来继续完成后续步骤。
 
    ```python
    @app.post("/activities/{activity_name}/signup")
@@ -76,19 +75,12 @@ In short, you can think of Copilot like a very specialized coworker. To be effec
 
    </details>
 
-### :keyboard: Activity: Let Copilot generate sample data 📋
+### :keyboard: 实操环节: 用 Copilot 生成示例数据 📋
 
-In new project developments, it's often helpful to have some realistic looking fake data for testing. Copilot is excellent at this task, so let's add some more sample activities and introduce another way to interact with Copilot using **Inline Chat**
+开发新项目时，经常需要生成用于测试的模拟数据。Copilot 在这方面非常强！我们可以在 `src/app.py` 文件顶部（大约第 23 行）找到 `activities` 变量，在这里让 Copilot 帮我们生成更多示例活动。
 
-**Inline Chat** and the **Copilot Chat** panel are similar, but differ in scope: Copilot Chat handles broader, multi-file or exploratory questions; Inline Chat is faster when you want targeted help on the exact line or block in front of you.
-
-1. Near the top of the `src/app.py` file (about line 23), find the `activities` variable, where our example extracurricular activities are configured.
-
-1. Click on any of the related lines and bring up Copilot inline chat by using the keyboard command `Ctrl + I` (windows) or `Cmd + I` (mac).
-
-   > 💡 **Tip:** Another way to bring up Copilot inline chat is: `right click` on any of the selected lines -> `Copilot` -> `Editor Inline Chat`.
-
-1. Enter the following prompt text and press enter or the **Send and Dispatch** button.
+1. 点击 `activities` 的任意一行，按下快捷键 `Ctrl + I`（Windows）或 `Cmd + I`（Mac）打开 **Inline Chat**。
+2. 输入以下提示词并回车：
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -97,12 +89,12 @@ In new project developments, it's often helpful to have some realistic looking f
    > activities, and 2 more intellectual activities.
    > ```
 
-1. After a moment, Copilot will directly start making changes to the code. The changes will be stylized differently to make any additions and removals easy to identify. Take a moment to inspect and then press the **Accept** button.
+3. Copilot 会直接在原来的基础上修改代码，你可以查看修改后点击 **Accept** 接受建议。
 
    <details>
-   <summary>Example Results</summary><br/>
+   <summary>示例结果</summary><br/>
 
-   Copilot is growing every day and may not always produce the same results. If you are unhappy with the suggestions, here is an example result we produced during the making of this exercise. You can use it to continue forward, if having trouble.
+   如果你对当前的建议不太满意，可参考下面的完整样例
 
    ```python
    # In-memory activity database
@@ -166,33 +158,21 @@ In new project developments, it's often helpful to have some realistic looking f
 
    </details>
 
-### :keyboard: Activity: Use Copilot to describe our work 💬
+### :keyboard: 实操环节: 用 Copilot 生成提交说明 💬
 
-Nice work fixing that bug and expanding the example activities! Now let's get our work committed and pushed to GitHub, again with the help of Copilot!
+Bug 修复成功，示例数据也造好了，现在可以提交修改并推送到 GitHub 远程仓库！
 
-1. In the left sidebar, select the `Source Control` tab.
-
-   > 💡 **Tip:** Opening a file from the source control area will show the differences to the original rather than simply opening it.
-
-1. Find the `app.py` file and press the `+` sign to collect your changes together in the staging area.
-
-   ![image](https://github.com/user-attachments/assets/7d3daf4e-4125-4775-88a7-33251cd7293e)
-
-1. Above the list of staged changes, find the **Message** text box, but **don't enter anything** for now.
-
-   - Typically, you would write a short description of the changes here, but now we have Copilot to help out!
-
-1. To the right of the **Message** text box, find and click the **Generate Commit Message** button (sparkles icon).
-
-1. Press the **Commit** button and **Sync Changes** button to push your changes to GitHub.
-
-1. Wait a moment for Mona to check your work, provide feedback, and share the next lesson.
+1. 在左侧边栏选择 **Source Control**（源代码管理）。
+2. 找到 `app.py` 文件，点击旁边的 `+` 将改动暂存。
+3. 不要手动输入提交信息，而是点击消息框右边的 ✨ **Generate Commit Message** 按钮，让 Copilot 自动生成说明。
+4. 点击 **Commit** 按钮提交，然后点击 **Sync Changes** 推送到 GitHub。
+5. 稍等片刻，Mona 会检查你的工作并给出下一步反馈。
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>遇到问题? 🤷</summary><br/>
 
-If you don't get feedback, here are some things to check:
+如果没有收到反馈，请确认:
 
-- Make sure your pushed the `src/app.py` file changes to the branch `accelerate-with-copilot`.
+- 是否将 `src/app.py` 文件的修改推送到了 `accelerate-with-copilot` 分支。
 
 </details>

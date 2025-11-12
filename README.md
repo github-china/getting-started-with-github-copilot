@@ -1,44 +1,48 @@
-# Getting Started with GitHub Copilot
+[English](https://github.com/skills/getting-started-with-github-copilot) | 中文
 
-_Get started using GitHub Copilot in less than an hour._
+> 本课程翻译自 Github Skills，全部课程请点击 [这里查看](https://www.github-zh.com/getting-started)
+
+# GitHub Copilot 入门指南
+
+_你将在不到一小时内学会使用 GitHub Copilot。_
 
 ## Welcome
 
-- **Who is this for**: Developers at any experience level looking to accelerate their code workflow.
-- **What you'll learn**: The different ways to interact with Copilot to explain, write, debug, and develop code.
-- **What you'll build**: You will guide Copilot to update Mergington High School's extracurricular activities website.
-- **Prerequisites**:
-  - Skills exercise: [Introduction to GitHub](https://github.com/skills/introduction-to-github)
-  - Familiarity with [VS Code](https://code.visualstudio.com/)
-  - Basic coding principles
-- **How long**: This exercise takes less than one hour to complete.
+- **目标人群**: 任何希望提升开发效率的开发者，无论你是菜鸟还是老手。
+- **学习内容**: 了解与 Copilot 交互的多种方式，包括解释代码、问题定位和任务开发。
+- **您将完成**: 我们将通过一个校外活动网站，演示如何使用 Copilot 修复bug以及新增功能。
+- **先决条件**:
+  - 熟悉 GitHub，新手建议先学习[GitHub 入门课程](https://github.com/skills/introduction-to-github)
+  - 熟悉 [VS Code](https://code.visualstudio.com/)
+  - 掌握基本编码知识
+- **课程时长**: 不到一个小时。
 
-In this exercise, you will:
 
-1. Use a preconfigured Codespace to run VS Code in your browser.
-1. Learn different interaction options to develop with GitHub Copilot.
-1. Use Copilot to summarize and review your pull request.
+在本练习中，你将：
 
-### How to start this exercise
+1. 使用 Codespace（云端托管的开发环境）在浏览器中运行 VS Code。
+2. 使用 GitHub Copilot 辅助开发，并尝试不同的AI交互模式。
+3. 使用 Copilot 对你的 Pull Request 进行总结和审查。
 
-Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
+### 如何开始本课程
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=getting-started-with-github-copilot&owner=%40me&name=skills-getting-started-with-github-copilot&description=Exercise:+Get+started+using+GitHub+Copilot&visibility=public)
+点击下方的 **COPY EXERCISE** 按钮，将练习代码复制到你的账号下。
+仓库创建完毕后，请给你亲爱的Mona（GitHub吉祥物）约20秒时间来你准备第一节课内容，然后**刷新页面**即可。
+
+[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=github-china&template_name=getting-started-with-github-copilot&owner=%40me&name=skills-getting-started-with-github-copilot&description=Exercise:+Get+started+using+GitHub+Copilot&visibility=public)
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>遇到问题? 🤷</summary><br/>
 
-When copying the exercise, we recommend the following settings:
+在复制仓库时，我们建议使用以下设置：
 
-- For owner, choose your personal account or an organization to host the repository.
-
-- We recommend creating a public repository, since private repositories will use Actions minutes.
+- 仓库名称、描述这些字段系统已经帮我们自动填充好了，您可以按需修改。
+- 建议选择公开仓库，因为私有仓库有[GitHub Actions 分钟数限制](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions)
    
-If the exercise isn't ready in 20 seconds, please check the [Actions](../../actions) tab.
+如果等待20秒后，页面没有变化, 请检测 [Actions](../../actions) tab。
 
-- Check to see if a job is running. Sometimes it simply takes a bit longer.
-
-- If the page shows a failed job, please submit an issue. Nice, you found a bug! 🐛
+- 查看是否有作业(job)正在运行，有时可能需要更长时间。
+- 如果页面显示作业失败，请提交 issue。太好了，你发现了一个 Bug！🐛
 
 </details>
 

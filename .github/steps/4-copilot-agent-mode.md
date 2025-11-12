@@ -1,52 +1,48 @@
-## Step 4: Engage Hyperdrive - Copilot Agent Mode 🚀
+## Step 4: Copilot 智能体模式 🚀
 
-### 📖 Theory: What is Copilot Agent Mode?
+### 📖 什么是 Copilot 智能体模式(Agent Mode)?
 
-Copilot [agent mode](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode) is the next evolution in AI-assisted coding. Acting as an autonomous peer programmer, it performs multi-step coding tasks at your command.
+Copilot [Agent Mode](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode) 是AI编程助理的最新进化形态。它能独立思考，感知环境，自主规划并完成任务。
 
-Copilot Agent Mode responds to compile and lint errors, monitors terminal and test output, and auto-corrects in a loop until the task is completed.
+在该模式下，Copilot 不仅能自动响应编译和语法错误，还会实时监控终端与测试输出，并在出现问题时自动修复，持续循环，直到任务完成。
 
-#### Edit Mode vs Agent Mode (at a glance)
+#### 编辑模式 vs 智能体模式
 
-| Aspect         | ✏️ Edit Mode                      | 👩‍🚀 Agent Mode                                                                    |
-| -------------- | --------------------------------- | -------------------------------------------------------------------------------- |
-| Context scope  | Only the files you explicitly add | May read/add additional files & surfaces as needed                               |
-| Self‑review    | Minimal (you drive iteration)     | Built‑in feedback & retry loop on errors/failures                                |
-| Change scope   | Highly scoped & surgical          | Broader; may touch related layers for consistency                                |
-| When to choose | You know exactly what to change   | Goal is broader or uncertain; requires exploration                               |
-| Tool calling   | None (you run commands manually)  | Can invoke tools (read/edit files, run commands, inspect terminal & test output) |
+| 对比维度      | ✏️ Edit 模式  | 👩‍🚀 Agent 模式                                  |
+| ------------ | ----------- | ------------------------------------------------|
+| **上下文范围** | 仅限你明确添加的文件  | 可根据任务需要自动读取或修改更多文件           |
+| **自我校验**  | 基本无（需你手动迭代） | 内置反馈与自动重试机制                       |
+| **修改范围**  | 精准、局部性强     | 可影响多个相关层面以保持一致性                    |
+| **适用场景**  | 你明确知道要改什么   | 任务较模糊、需要探索或推理                      |
+| **工具调用**  | 无（需手动执行命令）  | 可调用工具（读取/修改文件、运行命令、查看测试输出） |
 
-#### 🧰 Agent Mode Tools
+#### 🧰 工具调用
 
-Agent mode uses tools to accomplish specialized tasks while processing a user request. Examples of such tasks are:
+在处理用户请求时，智能体模式会调用不同的工具来完成目标任务，例如：
 
-- Finding relevant files to complete your prompt
-- Fetching contents of a webpage
-- Running tests or terminal commands
+* 查找与任务相关的文件
+* 获取网页内容
+* 运行测试或执行命令
 
 > [!TIP]
-> While VS Code provides many built‑in tools, you can also provide Agent Mode more domain‑specific powers through **MCP tools**.
+> 除了 VS Code 内置的工具外，你还可以通过 **MCP（Model Context Protocol）** 调用更多工具。
 >
-> Read more on [MCP servers](https://code.visualstudio.com/docs/copilot/customization/mcp-servers) and [GitHub MCP Server](https://github.com/github/github-mcp-server)
+> 了解更多请阅读 [MCP servers](https://code.visualstudio.com/docs/copilot/customization/mcp-servers) 以及 [GitHub MCP Server](https://github.com/github/github-mcp-server)
 
-Now, let's give **Agent Mode** a try! 👩‍🚀
+下面我们开始体验一下 **智能体模式** 吧！👩‍🚀
 
-### :keyboard: Activity: Use Agent mode to add functional "unregister" buttons
+### :keyboard: 实操环节: 使用 Agent 模式增加“取消报名”按钮
 
-Let's experiment with some more open-ended requests that will add more functionality to our web application.
-
-If you don't get the desired results, you can try other models or provided followup feedback to refine the results.
-
-1. Open the **Copilot** chat panel and use the dropdown menu to switch to **Agent** mode.
+1. 打开 **Copilot 聊天面板**，通过下拉菜单切换到 **Agent 模式**。
 
    <img width="250" alt="agent mode" src="https://github.com/user-attachments/assets/9bb85530-77a1-4d47-86b2-99769ce197db" />
 
-1. Click on the **Tools** icon and explore all Tools currently available to Copilot Agent Mode.
+1. 点击 **工具（Tools）图标**，浏览当前 Agent 模式可用的所有工具。
 
    <img width="250"  alt="tools icon" src="https://github.com/user-attachments/assets/8f73400a-2647-4b28-b52b-721b8cf348d8" />
 
 
-1. Time for our test! Let's ask Copilot to add functionality for removing participants.
+1. 准备测试！请 Copilot 帮你添加删除报名者的功能：
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -55,14 +51,14 @@ If you don't get the desired results, you can try other models or provided follo
    > When clicked, it will unregister that participant from the activity.
    > ```
 
-   The `#codebase` tool is used by Copilot to find relevant files, code chunks that are relevant to the task at hand.
+   其中的 `#codebase` 工具会帮助 Copilot 定位到相关文件和代码块，以便更准确地执行任务。
 
-   > 🪧 **Note:** In this lab we explicitly include the `#codebase` tool to get the most repeatable results.
-   > Feel free to try the prompt **without** `#codebase` and observe whether Agent Mode decides to gather broader project context on its own.
+   > 🪧 **Note:** 本课程中我们显式添加了 `#codebase` 来确保输出结果稳定。
+   > 你也可以尝试去掉它，看看 Agent 模式是否会自动扩展上下文范围。
 
-1. When Copilot is finished, restart the debugger and inspect the results. If you like the results, press the **Keep** button. If not, try providing Copilot some feedback to refined the results.
+1. Copilot 完成修改后，重启调试器，预览网页效果。如果结果满意，点击 **Keep** 按钮保存更改。如果不满意，可直接给出反馈，让 Copilot 进一步改进。
 
-1. Ask Copilot to fix a registration bug.
+1. 还有一个注册时的小问题需要 Copilot 修复
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -71,13 +67,13 @@ If you don't get the desired results, you can try other models or provided follo
    > When a participant is registered, the page must be refreshed to see the change on the activity.
    > ```
 
-1. When Copilot is finished, inspect the results. If you like the results, press the **Keep** button. If not, try providing Copilot some feedback.
+1. Copilot 完成后需要审查结果。满意就按 **Keep**，不满意就反馈给 Copilot 继续优化。
 
-### :keyboard: Activity: Use Agent mode to get test coverage 🧑‍🚀
+### :keyboard: 实操环节：使用 Agent 模式编写测试 🧑‍🚀
 
-Your backend is now feature‑rich—but still has zero test coverage. Use Copilot **Agent Mode** to add test dependencies, scaffold starter tests and run them.
+现在后端功能越来越完善，但还缺少测试覆盖。 这一步，我们将使用 **Agent 模式** 来自动添加测试依赖、生成测试代码并运行。
 
-1. Ask Copilot in **Agent mode** to set up and run tests for your backend.
+1. 在 **Agent 模式** 下向 Copilot 输入以下提示词：
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-placeholder?style=social&logo=github%20copilot)
    >
@@ -86,10 +82,11 @@ Your backend is now feature‑rich—but still has zero test coverage. Use Copil
    > Make sure to add any new dependencies to requirements.txt
    > ```
 
-1. As Copilot works on your prompt, different tools might need your approval.
+1. 在 Copilot 执行过程中，部分工具可能需要你手动确认。
 
-   **🎯 Goal: Get all tests passing (green) — aim for a clean run! ✅**
+   **🎯 目标: 让所有测试通过（显示绿色）—— 追求一次性成功！✅**
 
-   > 🪧 **Note:** Copilot may one-shot this with the initial prompt or need more guidance from you.
+   > 🪧 **提示:** Copilot 可能一次就完成任务，也可能需要你补充说明。
 
-1. Once the tests are passing - **commit** and **push** all changes to your `accelerate-with-copilot` branch to progress to the last step! Almost done!
+1. 所有测试通过后，**提交并推送**修改到你的 `accelerate-with-copilot` 分支。
+   🎉 快完成了！进入最后一步吧！

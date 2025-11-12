@@ -1,45 +1,43 @@
-## Step 3: Getting work done even _faster_ with Copilot Edit Mode
+## Step 3: 使用编辑模式更快完成工作
 
-In our previous steps, we used features of Copilot that require more hands-on guidance and they produced mostly localized results. Now, we will explore Copilot **Edit Mode**, a feature that allows working more holistically on our repo.
+在前步骤中，我们使用的 Copilot 功能需要人工介入的地方比较多，生成的结果主要是局部修改。现在，我们来探索 Copilot 的 **编辑模式**，它可以让你更全面地对整个仓库进行修改。
 
-### 📖 Theory: Copilot Edit Mode
+### 📖 Copilot 编辑模式
 
-Copilot **Edit Mode** and **Agent Mode** both let you apply **natural‑language** driven changes across **multiple files**, however there are some differences between them.
+Copilot 的 **编辑模式(Edit Mode)** 和 **智能体模式(Agent Mode)** 都能基于自然语言在 **多个文件** 上进行修改，但两者略有区别。本步我们重点学习 **编辑模式**，下一步再探索 **智能体模式**。
 
-In this step we will focus on **Edit Mode** and explore **Agent Mode** in the next step.
+编辑模式最适合用于 **目标明确**、你 **清楚修改范围** 的任务。
 
-Edit Mode is best used for **well defined** tasks where you **know the scope** of the needed changes.
-
-#### How Edit Mode works
+#### 编辑模式工作原理
 
 ```mermaid
 flowchart LR
-   A[Select Context Files] --> B[Prompt Copilot]
-   B --> C[Proposed Changes]
-   C --> D{Review Change}
-   D --> E[Accept]
-   D --> F[Discard]
-   D -->|Refine Prompt| B
+   A[选择上下文文件] --> B[向 Copilot 输入提示词]
+   B --> C[查看 Copilot 提议的修改]
+   C --> D{审核修改}
+   D --> E[接受修改]
+   D --> F[舍弃修改]
+   D -->|优化提示| B
 
 ```
 
-1. **Set Context**: Select files that Copilot should consider in it's changes
-1. **Prompt Copilot**: Use natural language to describe the required changes.
-1. **Review Changes**: See proposed changes in-place in your code.
-1. **Accept or Discard**: Review each suggested edit and choose which to keep.
-1. **Iterate**: If needed, provide follow-up instructions to refine the changes.
+1. **设置上下文**：选择 Copilot 在修改时应考虑的文件
+2. **Copilot 提示词**：用自然语言描述需要的修改
+3. **审核修改**：在代码中查看建议的改动
+4. **接受或舍弃**：逐条审核修改并决定保留哪部分
+5. **迭代**：如有需要，可提供后续指令进一步优化修改
 
-### :keyboard: Activity: Use Copilot to add a new feature! :rocket:
+### :keyboard: 实操环节: 用 Copilot 添加新功能! :rocket:
 
-Our website lists activities, but it's keeping the guest list secret 🤫 
+我们的网站已经列出了活动，但有哪些学生参与报名我们不知道 🤫
 
-Let's use Copilot to change the website to display signed up students under each activity!
+现在让我们 Copilot 修改功能，显示已报名的学生！
 
-1. At the bottom of Copilot Chat window, use the dropdown to switch to **Edit** mode.
+1.  Copilot Chat 窗口底部的下拉菜单切换到 **Edit 模式**
 
    <img width="350" alt="image" src="https://github.com/user-attachments/assets/646fc94a-7d60-4821-b9cf-9ec6f4fd03d7" />
 
-1. Open the files related to our webpage then drag each editor window (or file) to the chat panel, informing Copilot to use them as context.
+1. 打开网页相关文件，并将每个编辑窗口或文件拖入 Chat 面板，让 Copilot 将它们作为上下文参考：
 
    - `src/static/app.js`
    - `src/static/index.html`
@@ -47,9 +45,9 @@ Let's use Copilot to change the website to display signed up students under each
 
    <img width="400" alt="image showing files added to context" src="https://github.com/user-attachments/assets/8026a86b-b350-4b98-bf4f-764b61d157e7" />
 
-   > 💡 **Tip:** You can also use the **Add Context...** button to provide other sources of context items, like a GitHub issue, the entire codebase, or the results of a terminal window.
+   > 💡 **Tip:** 你也可以通过 **Add Context...** 按钮添加其他类型的上下文来源，如 GitHub issue、整个代码库或终端输出。
 
-1. Ask Copilot to update our project to display the current participants of activities. Wait a moment for the edit suggestions to arrive and be applied.
+1. 然后告诉 Copilot 更新代码，显示当前活动的参与者。
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -59,45 +57,45 @@ Let's use Copilot to change the website to display signed up students under each
    > Remember to make it pretty!
    > ```
 
-   - An extra icon has appeared next to the file names and open editor windows indicating they have suggested edits.
-   - A suggested edits panel has appeared in the bottom right of the editor window providing controls to jump to the recommended changes.
+   - 文件名和编辑窗口旁会出现了新图标，表示有修改建议
+   - 右下角会出现编辑建议面板，方便快速跳转并查看具体修改内容
 
       <img width="200" alt="files with icons indicating they have been edited" src="https://github.com/user-attachments/assets/9c7c2e10-cd18-43c5-9947-cffd6dde0473" />
 
       <img width="250" alt="edit navigation panel" src="https://github.com/user-attachments/assets/a84965a5-2f43-4c93-a814-0fdeb3a06494" />
 
 
-1. Before we simply accept the changes, please check our website again and verify everything is updated as expected. Here is an example of an updated activity card. You may need to restart the app or refresh the page.
+1. 在接受修改前，请再次检查网站，确认所有更新正常显示。下面是更新后的活动卡片截图（可能需要重启应用或刷新页面）：
 
    <img width="350" alt="Activity card with participant info" src="https://github.com/user-attachments/assets/c4d56187-4791-4c8e-87d7-d5ce7cdc0bee" />
 
-   > 🪧 **Note:** Your activity card may look different. Copilot won't always produce the same results.
+   > 🪧 **注意:** 你看到的活动卡片可能不同，Copilot 的结果不一定完全一致
 
    <details>
-   <summary>Need help? 🤷</summary><br/>
-   If the website is not loading, here are some things to check.
+   <summary>遇到问题? 🤷</summary><br/>
+   如果网站未正常加载，可检查以下内容：  
 
-   - Restart the VS Code Debugger to make sure the latest version of the website is served.
-   - If you forgot the url, or closed the window, please review step 1.
-   - Try hard refreshing the webpage or opening in a private window so it downloads a fresh copy.
+   - 重启 VS Code 调试器，确保最新版本的网站被加载
+   - 如果忘记 URL 或关闭窗口，请回顾第 1 步
+   - 尝试强制刷新网页或使用隐身窗口加载最新内容
 
    </details>
 
-1. Now that we have confirmed our changes are good, use the panel to cycle through each suggested edit and press **Keep** to apply the change.
+1. 确认修改正确后，依次查看每条建议修改并点击 **Keep** 应用
 
-   > 💡 **Tip:** You can accept the changes directly, modify them, or provide additional instruction to refine them using the chat interface.
+   > 💡 **Tip:** 可以直接接受建议，修改，或通过聊天界面提供额外指令进一步优化
 
-1. With our new feature complete, please **commit** and **push** the changes to GitHub.
+1. 新功能完成后，请 **commit** 并 **push** 修改到 GitHub
 
-1. Wait a moment for Mona to check your work, provide feedback, and share the next lesson.
+1. 稍等片刻，Mona 会检查你的工作并给出下一步反馈。
 
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>遇到问题? 🤷</summary><br/>
 
-If you don't get feedback, here are some things to check:
+如果未收到反馈，请检查：
 
-- Make sure your commit the changes in the `src/static/` directory to the branch `accelerate-with-copilot` and pushed/synchronized to GitHub.
-- If Mona found a mistake, simply make a correction and push your changes again. Mona will check your work as many times as needed.
+- 是否将 `src/static/` 目录下的修改提交到 `accelerate-with-copilot` 分支，并推送到 GitHub
+- 如果 Mona 发现错误，只需修正后再次推送，Mona 会多次检查你的修改
 
 </details>

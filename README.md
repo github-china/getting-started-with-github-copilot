@@ -1,6 +1,6 @@
 [English](https://github.com/skills/getting-started-with-github-copilot) | 中文
 
-> 本课程翻译自 Github Skills，全部课程请点击 [这里查看](https://www.github-zh.com/getting-started)
+> 本课程翻译自 Github Skills，全部课程请点击 [这里查看](https://gitcn.org/getting-started)
 
 # GitHub Copilot 入门指南
 
@@ -8,11 +8,11 @@ _你将在不到一小时内学会使用 GitHub Copilot。_
 
 ## Welcome
 
-- **目标人群**: 任何希望提升开发效率的开发者，无论你是菜鸟还是老手。
-- **学习内容**: 了解与 Copilot 交互的多种方式，包括解释代码、问题定位和任务开发。
-- **您将完成**: 我们将通过一个校外活动网站，演示如何使用 Copilot 修复bug以及新增功能。
+- **目标人群**: 任何希望通过 AI 提升开发效率的开发者，无论你是菜鸟还是老手。
+- **学习内容**: 了解 Copilot 的多种使用场景，包括解释代码、问题定位和任务开发。
+- **您将完成**: 我们将通过完善一个校外活动网站，演示如何使用 Copilot 修复bug以及新增功能。
 - **先决条件**:
-  - 熟悉 GitHub，新手建议先学习[GitHub 入门课程](https://github.com/skills/introduction-to-github)
+  - 熟悉 GitHub，新手建议先学习[GitHub 入门课程](https://github.com/github-china/introduction-to-github)
   - 熟悉 [VS Code](https://code.visualstudio.com/)
   - 掌握基本编码知识
 - **课程时长**: 不到一个小时。
